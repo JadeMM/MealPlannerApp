@@ -21,5 +21,14 @@ public class MainPage extends AppCompatActivity {
             }
 
         });
+
+        Button add = (Button) findViewById(R.id.add_button);
+        add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), AddRecipe.class);
+                startActivityForResult(myIntent, 0);
+            }
+
+        });
     }
 }
