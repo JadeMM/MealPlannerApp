@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -44,31 +48,151 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/ingredient_layout"
+        android:id="@+id/ingredient_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ingredient_1_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:showDividers="middle"
-        >
+        android:showDividers="middle">
 
-    <EditText
-        android:id="@+id/enter_ing1"
-        android:layout_marginLeft="10dp"
-        android:layout_width="fill_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:hint="Ingredient"
-        android:inputType="textEmailAddress"/>
 
-        <EditText
-            android:id="@+id/enter_amount1"
-            android:layout_marginLeft="10dp"
-            android:layout_width="100dp"
+            <EditText
+                android:id="@+id/enter_amount1"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/enter_ing1"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/ingredient_2_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Amount"
-            android:inputType="textEmailAddress"/>
+            android:orientation="horizontal"
+            android:showDividers="middle">
 
 
+            <EditText
+                android:id="@+id/enter_amount2"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/enter_ing2"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/ingredient_3_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+
+            <EditText
+                android:id="@+id/enter_amount3"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/enter_ing3"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/ingredient_4_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+
+            <EditText
+                android:id="@+id/enter_amount4"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/enter_ing4"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/ingredient_5_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+
+            <EditText
+                android:id="@+id/enter_amount5"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/enter_ing5"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
     </LinearLayout>
 
     <Button
@@ -93,13 +217,145 @@
         android:text="Enter Instructions:"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/enter_istr1"
-        android:layout_marginLeft="10dp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/step_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Step"
-        android:inputType="textEmailAddress"/>
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/step_1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/num1"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1."/>
+
+            <EditText
+                android:id="@+id/enter_step_1"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Step"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/step_2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/num2"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2."/>
+
+            <EditText
+                android:id="@+id/enter_step_2"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Step"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/step_3_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/num3"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3."/>
+
+            <EditText
+                android:id="@+id/enter_step_3"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Step"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/step_4_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/num4"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4."/>
+
+            <EditText
+                android:id="@+id/enter_step_4"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Step"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/step_5_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/num5"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5."/>
+
+            <EditText
+                android:id="@+id/enter_step_5"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Step"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id='@+id/new_instr_button'
@@ -133,3 +389,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>
