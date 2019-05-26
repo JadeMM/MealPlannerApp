@@ -18,10 +18,49 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class AddRecipe extends AppCompatActivity {
 
+
+    DBHelper mydb;
+
+    EditText name;
+    EditText amount1;
+    EditText amount2;
+    EditText amount3;
+    EditText amount4;
+    EditText amount5;
+    EditText ing1;
+    EditText ing2;
+    EditText ing3;
+    EditText ing4;
+    EditText ing5;
+    EditText step1;
+    EditText step2;
+    EditText step3;
+    TextView step4;
+    EditText step5;
+    int id_To_Update = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_recipe);
+        name = (EditText) findViewById(R.id.enter_name);
+        amount1 = (EditText) findViewById(R.id.enter_amount1);
+        amount2 = (EditText) findViewById(R.id.enter_amount2);
+        amount3 = (EditText) findViewById(R.id.enter_amount3);
+        amount4 = (EditText) findViewById(R.id.enter_amount4);
+        amount5 = (EditText) findViewById(R.id.enter_amount5);
+        ing1 = (EditText) findViewById(R.id.enter_ing1);
+        ing2 = (EditText) findViewById(R.id.enter_ing2);
+        ing3 = (EditText) findViewById(R.id.enter_ing3);
+        ing4 = (EditText) findViewById(R.id.enter_ing4);
+        ing5 = (EditText) findViewById(R.id.enter_ing5);
+        step1 = (EditText) findViewById(R.id.enter_step_1);
+        step2 = (EditText) findViewById(R.id.enter_step_2);
+        step3 = (EditText) findViewById(R.id.enter_step_3);
+        step4 = (EditText) findViewById(R.id.enter_step_4);
+        step5 = (EditText) findViewById(R.id.enter_step_5);
+
+        mydb = new DBHelper(this);
 
 
         final LinearLayout layout = (LinearLayout) findViewById(R.id.add_recipe_layout);
@@ -36,7 +75,7 @@ public class AddRecipe extends AppCompatActivity {
         final LinearLayout ingr5 = (LinearLayout) findViewById(R.id.ingredient_5_layout);
         ingr5.setVisibility(View.GONE);
 
-        Button addIngr = (Button) findViewById(R.id.new_ing_button);
+        final Button addIngr = (Button) findViewById(R.id.new_ing_button);
         addIngr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
@@ -48,10 +87,13 @@ public class AddRecipe extends AppCompatActivity {
                     ingr4.setVisibility(View.VISIBLE);
                 } else {
                     ingr5.setVisibility(View.VISIBLE);
+                    addIngr.setVisibility(View.GONE);
                 }
             }
 
         });
+
+
 
 
         final LinearLayout step1 = (LinearLayout) findViewById(R.id.step_1_layout);
@@ -64,7 +106,7 @@ public class AddRecipe extends AppCompatActivity {
         final LinearLayout step5 = (LinearLayout) findViewById(R.id.step_5_layout);
         step5.setVisibility(View.GONE);
 
-        Button addStep = (Button) findViewById(R.id.new_instr_button);
+        final Button addStep = (Button) findViewById(R.id.new_instr_button);
         addStep.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     if(step2.getVisibility() == View.GONE) {
@@ -75,6 +117,7 @@ public class AddRecipe extends AppCompatActivity {
                         step4.setVisibility(View.VISIBLE);
                     } else {
                         step5.setVisibility(View.VISIBLE);
+                        addStep.setVisibility(View.GONE);
                     }
                 }
         });
@@ -84,9 +127,54 @@ public class AddRecipe extends AppCompatActivity {
         Button save = (Button) findViewById(R.id.save_recipe_button);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                finish();
+                if(insert()) {
+                    Intent intent = new Intent(getApplicationContext(),MainPage.class);
+                    startActivity(intent);
+                }
             }
-
         });
+    }
+
+    public boolean insert() {
+        boolean done = false;
+        //Bundle extras = getIntent().getExtras();
+
+
+        /*if(extras !=null) {
+            String Value = extras.getString("name");
+            if(Value != null){
+                if(mydb.updateContact(id_To_Update, ing1.getText().toString(), ing2.getText().toString(), ing3.getText().toString(),
+                        ing4.getText().toString(), ing5.getText().toString(),amount1.getText().toString(),amount2.getText().toString(),
+                        amount3.getText().toString(), amount4.getText().toString(), amount5.getText().toString(), step1.getText().toString(),
+                        step2.getText().toString(), step3.getText().toString(), step4.getText().toString(), step5.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                } else{
+                    Toast.makeText(getApplicationContext(), "not Updated", Toast.LENGTH_SHORT).show();
+                }
+            } else{*/
+                String s1 = step1.getText().toString();
+                if(s1 != " ") {
+                    s1 = "1. " + s1;
+                }
+
+                String s5 = step5.getText().toString();
+                if(s5 != "") {
+                    s5 = "5. " + s5;
+                }
+
+                if(mydb.insertRecipe(name.getText().toString(), ing1.getText().toString(), ing2.getText().toString(), ing3.getText().toString(),
+                        ing4.getText().toString(), ing5.getText().toString(),amount1.getText().toString(),amount2.getText().toString(),
+                        amount3.getText().toString(), amount4.getText().toString(), amount5.getText().toString(), s1,
+                        "2. " + step2.getText().toString(), "3. " + step3.getText().toString(), "4. " + step4.getText().toString(), s5)){
+                    Toast.makeText(getApplicationContext(), "Saved Recipe", Toast.LENGTH_SHORT).show();
+                    done = true;
+                } else{
+                    Toast.makeText(getApplicationContext(), "Failed. Try again", Toast.LENGTH_SHORT).show();
+                }
+                return done;
+            //}
+        //}
     }
 }
