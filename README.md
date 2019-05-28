@@ -6,6 +6,7 @@ These recipes will be recipes that are drawn from the internet or have been
 created by the user.
 
 [Progress Summary 1](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Summary)<br>
+[Progress Summary 2](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Progress-Summary-2)<br>
 [Progress Summary 3](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Progress-Summary-3)<br>
 [Dipti's checkpoint 1](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/checkpoint-1) <br>
 
