@@ -46,6 +46,14 @@ public class FindRecipe extends AppCompatActivity {
             }
 
         });
+        Button searchDB = (Button) findViewById(R.id.find_db_button);
+        searchDB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), FindRecipe.class);
+                startActivityForResult(myIntent, 0);
+            }
+
+        });
     }
     
     
