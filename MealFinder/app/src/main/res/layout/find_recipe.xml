@@ -1,103 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_recipe_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    >
 
     <TextView
         android:id='@+id/hello_user'
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the desired ingredients"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/add_ingredient_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id='@+id/add_ingredient_button'
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Add Additional Ingredient"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/first_ingredient"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Enter the desired ingredients:"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/first_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingredient"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/second_ingredient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/add_ingredient_button" />
+        android:layout_marginTop="40dp"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/second_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingredient"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/third_ingredient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/first_ingredient" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/third_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingredient"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/forth_ingredient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/second_ingredient" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/forth_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingredient"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/fifth_ingredient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/third_ingredient" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/fifth_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingredient"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/find_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/forth_ingredient" />
+        android:inputType="textEmailAddress"/>
 
     <Button
-        android:id='@+id/find_button'
+        android:id='@+id/add_ingredient_button'
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Ingredient"
+        android:textAllCaps="false" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find Recipes"
-        android:textSize="20sp"
-        android:onClick="internet1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fifth_ingredient" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:layout_marginTop="60dp">
 
+        <Button
+            android:id='@+id/find_button'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="internet1"
+            android:text="Search Online"
+            android:textSize="15dp" />
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id='@+id/find_db_button'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Database"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
