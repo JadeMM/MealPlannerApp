@@ -5,7 +5,8 @@ recipes for the user based on a few ingredients that are provided by the user.
 These recipes will be recipes that are drawn from the internet or have been
 created by the user.
 
-[Progress Summary](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Summary)<br>
+[Progress Summary 1](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Summary)<br>
+[Progress Summary 3](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/Progress-Summary-3)<br>
 [Dipti's checkpoint 1](https://gitlab.cs.wwu.edu/dhondd/meal-planner/wikis/checkpoint-1) <br>
 
 **Students:**<br>
