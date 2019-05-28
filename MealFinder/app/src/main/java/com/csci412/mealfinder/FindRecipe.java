@@ -1,5 +1,6 @@
 package com.csci412.mealfinder;
 
+import android.net.Uri;
 import android.support.constraint.ConstraintSet;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -36,5 +37,11 @@ public class FindRecipe extends AppCompatActivity {
             }
 
         });
+    }
+    
+    
+    public void internet1(View view){
+        Intent newBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.allrecipes.com"));
+        startActivity(newBrowser);
     }
 }
