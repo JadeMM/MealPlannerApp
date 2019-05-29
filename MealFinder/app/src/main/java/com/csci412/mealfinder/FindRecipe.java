@@ -28,7 +28,6 @@ public class FindRecipe extends AppCompatActivity {
         ing4.setVisibility(View.GONE);
         final EditText ing5 = (EditText) findViewById(R.id.fifth_ingredient);
         ing5.setVisibility(View.GONE);
-        final Button addButton = (Button) findViewById(R.id.add_ingredient_button);
 
         final Button add = (Button) findViewById(R.id.add_ingredient_button);
         add.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +48,17 @@ public class FindRecipe extends AppCompatActivity {
         Button searchDB = (Button) findViewById(R.id.find_db_button);
         searchDB.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), FindRecipe.class);
-                startActivityForResult(myIntent, 0);
+
+                Bundle dataBundle = new Bundle();
+                dataBundle.putString("first", ing1.getText().toString());
+                dataBundle.putString("second", ing2.getText().toString());
+                dataBundle.putString("third", ing3.getText().toString());
+                dataBundle.putString("fourth", ing4.getText().toString());
+                dataBundle.putString("fifth", ing5.getText().toString());
+
+                Intent intent = new Intent(getApplicationContext(),DBRecipes.class);
+                intent.putExtras(dataBundle);
+                startActivity(intent);
             }
 
         });
