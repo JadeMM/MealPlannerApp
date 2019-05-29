@@ -2,6 +2,7 @@ package com.csci412.mealfinder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.*;
 import android.view.View;
 import android.content.Intent;
@@ -20,7 +21,7 @@ public class MainPage extends AppCompatActivity {
 
 
         mydb = new DBHelper(this);
-        ArrayList array_list = mydb.getAllCotacts();
+        ArrayList array_list = mydb.getAllRecipes();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
 
         obj = (ListView)findViewById(R.id.listView1);
@@ -30,12 +31,13 @@ public class MainPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
                 // TODO Auto-generated method stub
                 int id_To_Search = arg2 + 1;
+                String name = (String) arg0.getItemAtPosition(arg2);
 
                 Bundle dataBundle = new Bundle();
+                dataBundle.putString("name", name);
                 dataBundle.putInt("id", id_To_Search);
 
                 Intent intent = new Intent(getApplicationContext(),DisplayCreatedRecipes.class);
-
                 intent.putExtras(dataBundle);
                 startActivity(intent);
             }
@@ -54,15 +56,6 @@ public class MainPage extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), AddRecipe.class);
-                startActivityForResult(myIntent, 0);
-            }
-
-        });
-
-        Button custom = (Button) findViewById(R.id.view_custom_button);
-        custom.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), DisplayCreatedRecipes.class);
                 startActivityForResult(myIntent, 0);
             }
 
