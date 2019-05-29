@@ -70,7 +70,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
             <EditText
@@ -80,7 +79,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="Ingredient"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
 
@@ -100,7 +98,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
             <EditText
@@ -110,7 +107,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="Ingredient"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
 
@@ -130,7 +126,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
             <EditText
@@ -140,7 +135,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="Ingredient"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
 
@@ -160,7 +154,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
             <EditText
@@ -170,7 +163,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="Ingredient"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
 
@@ -190,7 +182,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
             <EditText
@@ -200,7 +191,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="Ingredient"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
     </LinearLayout>
@@ -258,7 +248,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Step"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
         </LinearLayout>
@@ -285,7 +274,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Step"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
         </LinearLayout>
@@ -312,7 +300,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Step"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
         </LinearLayout>
@@ -339,7 +326,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Step"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
         </LinearLayout>
@@ -366,7 +352,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Step"
-                android:text=" "
                 android:inputType="textEmailAddress"/>
 
         </LinearLayout>
