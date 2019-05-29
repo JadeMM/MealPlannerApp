@@ -23,28 +23,16 @@
         android:gravity="center">
 
         <Button
-            android:id='@+id/view_button'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"/>
-
-        <Button
             android:id='@+id/find_button'
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find"/>
+            android:text="Find recipe by ingredients"/>
 
         <Button
             android:id='@+id/add_button'
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create"/>
-
-        <Button
-            android:id='@+id/view_custom_button'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"/>
+            android:text="Create new recipe"/>
     </LinearLayout>
 
     <ListView
