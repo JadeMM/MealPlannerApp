@@ -10,6 +10,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
+//DB methods based off Android SQLite-tutorial by tutorialspoint.com
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "RecipeDB.db";
@@ -61,6 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
             String step1, String step2, String step3, String step4, String step5) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+
         contentValues.put("name", name);
 
         if(amount1 != " ") {
@@ -145,7 +147,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from recipes where id="+id+"", null );
+        Cursor res =  db.rawQuery( "select * from recipes where id="+ id +"", null );
+        return res;
+    }
+
+    public Cursor getData(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from recipes where name='" + name + "'", null );
         return res;
     }
 
@@ -180,19 +188,110 @@ public class DBHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public Integer deleteContact (Integer id) {
+    public Integer deleteRecipe (Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("recipes",
-                "id = ? ",
-                new String[] { Integer.toString(id) });
+        return db.delete("recipes", "id = ? ", new String[] { Integer.toString(id) });
     }
 
-    public ArrayList<String> getAllCotacts() {
+    public Integer deleteRecipe (String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("recipes", "name = ?", new String[] { name });
+    }
+
+    public ArrayList<String> getAllRecipes() {
         ArrayList<String> array_list = new ArrayList<String>();
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from recipes", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(RECIPE_COLUMN_NAME)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<String> getIngredientRecipes(String ing1, String ing2, String ing3, String ing4, String ing5) {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from recipes where (ing1 like '%" + ing1 + "%' or ing1 like '%" + ing2 +"%' or ing1 like '%" + ing3 +"%' or ing1 like '%" + ing4 +"%'or ing1 like '%" + ing5 +"%') " +
+                "and (ing2 like '%" + ing1 + "%' or ing2 like '%" + ing2 +"%' or ing2 like '%" + ing3 +"%' or ing2 like '%" + ing4 +"%'or ing2 like '%" + ing5 +"%') " +
+                "and (ing3 like '%" + ing1 + "%' or ing3 like '%" + ing2 +"%' or ing3 like '%" + ing3 +"%' or ing3 like '%" + ing4 +"%'or ing3 like '%" + ing5 +"%') " +
+                "and (ing4 like '%" + ing1 + "%' or ing4 like '%" + ing2 +"%' or ing4 like '%" + ing3 +"%' or ing4 like '%" + ing4 +"%'or ing4 like '%" + ing5 +"%') " +
+                "and (ing5 like '%" + ing1 + "%' or ing5 like '%" + ing2 +"%' or ing5 like '%" + ing3 +"%' or ing5 like '%" + ing4 +"%'or ing5 like '%" + ing5 +"%')";
+        Cursor res =  db.rawQuery( query, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(RECIPE_COLUMN_NAME)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<String> getIngredientRecipes(String ing1) {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from recipes where (ing1 LIKE '%" + ing1 + "%') or (ing2 LIKE '%" + ing1 + "%') or (ing3 LIKE '%" + ing1 + "%') " +
+                "or (ing4 LIKE '%" + ing1 + "%') or (ing5 LIKE '%" + ing1 + "%')";
+        Cursor res =  db.rawQuery( query, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(RECIPE_COLUMN_NAME)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<String> getIngredientRecipes(String ing1, String ing2) {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from recipes where (ing1 LIKE '%" + ing1 + "%' or ing2 LIKE '%" + ing1 + "%' or ing3 LIKE '%" + ing1 + "%' or ing4 LIKE '%" + ing1 + "%' or ing5 LIKE '%" + ing1 + "%')" +
+                "and (ing1 LIKE '%" + ing2 + "%' or ing2 LIKE '%" + ing2 + "%' or ing3 LIKE '%" + ing2 + "%' or ing4 LIKE '%" + ing2 + "%' or ing5 LIKE '%" + ing2 + "%')";
+        Cursor res =  db.rawQuery( query, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(RECIPE_COLUMN_NAME)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<String> getIngredientRecipes(String ing1, String ing2, String ing3) {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from recipes where (ing1 LIKE '%" + ing1 + "%' or ing2 LIKE '%" + ing1 + "%' or ing3 LIKE '%" + ing1 + "%' or ing4 LIKE '%" + ing1 + "%' or ing5 LIKE '%" + ing1 + "%')" +
+                "and (ing1 LIKE '%" + ing2 + "%' or ing2 LIKE '%" + ing2 + "%' or ing3 LIKE '%" + ing2 + "%' or ing4 LIKE '%" + ing2 + "%' or ing5 LIKE '%" + ing2 + "%')" +
+                "and (ing1 LIKE '%" + ing3 + "%' or ing2 LIKE '%" + ing3 + "%' or ing3 LIKE '%" + ing3 + "%' or ing4 LIKE '%" + ing3 + "%' or ing5 LIKE '%" + ing3 + "%')";
+        Cursor res =  db.rawQuery( query, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(RECIPE_COLUMN_NAME)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<String> getIngredientRecipes(String ing1, String ing2, String ing3, String ing4) {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from recipes where (ing1 LIKE '%" + ing1 + "%' or ing2 LIKE '%" + ing1 + "%' or ing3 LIKE '%" + ing1 + "%' or ing4 LIKE '%" + ing1 + "%' or ing5 LIKE '%" + ing1 + "%')" +
+                "and (ing1 LIKE '%" + ing2 + "%' or ing2 LIKE '%" + ing2 + "%' or ing3 LIKE '%" + ing2 + "%' or ing4 LIKE '%" + ing2 + "%' or ing5 LIKE '%" + ing2 + "%')" +
+                "and (ing1 LIKE '%" + ing3 + "%' or ing2 LIKE '%" + ing3 + "%' or ing3 LIKE '%" + ing3 + "%' or ing4 LIKE '%" + ing3 + "%' or ing5 LIKE '%" + ing3 + "%')" +
+                "and (ing1 LIKE '%" + ing4 + "%' or ing2 LIKE '%" + ing4 + "%' or ing3 LIKE '%" + ing4 + "%' or ing4 LIKE '%" + ing4 + "%' or ing5 LIKE '%" + ing4 + "%')";
+        Cursor res =  db.rawQuery( query, null );
         res.moveToFirst();
 
         while(res.isAfterLast() == false){
