@@ -35,7 +35,7 @@ public class AddRecipe extends AppCompatActivity {
     EditText step1;
     EditText step2;
     EditText step3;
-    TextView step4;
+    EditText step4;
     EditText step5;
     int id_To_Update = 0;
 
@@ -137,44 +137,36 @@ public class AddRecipe extends AppCompatActivity {
 
     public boolean insert() {
         boolean done = false;
-        //Bundle extras = getIntent().getExtras();
+        String s1 = step1.getText().toString();
+        if(s1.length() > 0) {
+            s1 = "1. " + s1;
+        }
 
+        String s2 = step2.getText().toString();
+        if(s2.length() > 0)
+            s2 = "2. " + s2;
 
-        /*if(extras !=null) {
-            String Value = extras.getString("name");
-            if(Value != null){
-                if(mydb.updateContact(id_To_Update, ing1.getText().toString(), ing2.getText().toString(), ing3.getText().toString(),
-                        ing4.getText().toString(), ing5.getText().toString(),amount1.getText().toString(),amount2.getText().toString(),
-                        amount3.getText().toString(), amount4.getText().toString(), amount5.getText().toString(), step1.getText().toString(),
-                        step2.getText().toString(), step3.getText().toString(), step4.getText().toString(), step5.getText().toString())){
-                    Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                } else{
-                    Toast.makeText(getApplicationContext(), "not Updated", Toast.LENGTH_SHORT).show();
-                }
-            } else{*/
-                String s1 = step1.getText().toString();
-                if(s1 != " ") {
-                    s1 = "1. " + s1;
-                }
+        String s3 = step3.getText().toString();
+        if(s3.length() > 0)
+            s3 = "3. " + s3;
 
-                String s5 = step5.getText().toString();
-                if(s5 != "") {
-                    s5 = "5. " + s5;
-                }
+        String s4 = step4.getText().toString();
+        if(s4.length() > 0)
+            s4 = "4. " + s4;
 
-                if(mydb.insertRecipe(name.getText().toString(), ing1.getText().toString(), ing2.getText().toString(), ing3.getText().toString(),
-                        ing4.getText().toString(), ing5.getText().toString(),amount1.getText().toString(),amount2.getText().toString(),
-                        amount3.getText().toString(), amount4.getText().toString(), amount5.getText().toString(), s1,
-                        "2. " + step2.getText().toString(), "3. " + step3.getText().toString(), "4. " + step4.getText().toString(), s5)){
-                    Toast.makeText(getApplicationContext(), "Saved Recipe", Toast.LENGTH_SHORT).show();
-                    done = true;
-                } else{
-                    Toast.makeText(getApplicationContext(), "Failed. Try again", Toast.LENGTH_SHORT).show();
-                }
-                return done;
-            //}
-        //}
+        String s5 = step5.getText().toString();
+        if(s5.length() > 0) {
+            s5 = "5. " + s5;
+        }
+
+        if(mydb.insertRecipe(name.getText().toString(), ing1.getText().toString(), ing2.getText().toString(), ing3.getText().toString(),
+                ing4.getText().toString(), ing5.getText().toString(),amount1.getText().toString(),amount2.getText().toString(),
+                amount3.getText().toString(), amount4.getText().toString(), amount5.getText().toString(), s1, s2, s3, s4, s5)){
+            Toast.makeText(getApplicationContext(), "Saved Recipe", Toast.LENGTH_SHORT).show();
+            done = true;
+        } else{
+            Toast.makeText(getApplicationContext(), "Failed. Try again", Toast.LENGTH_SHORT).show();
+        }
+        return done;
     }
 }
