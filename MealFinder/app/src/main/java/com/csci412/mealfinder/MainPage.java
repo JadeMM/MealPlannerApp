@@ -9,6 +9,8 @@ import android.content.Intent;
 
 import java.util.ArrayList;
 
+import static android.graphics.Color.WHITE;
+
 public class MainPage extends AppCompatActivity {
 
     private ListView obj;

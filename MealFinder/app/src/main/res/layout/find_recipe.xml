@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:showDividers="middle"
-    >
+    android:padding="20dp"
+    android:background="@color/lightYellow">
 
     <TextView
         android:id='@+id/hello_user'
@@ -61,8 +58,12 @@
         android:id='@+id/add_ingredient_button'
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Ingredient"
-        android:textAllCaps="false" />
+        android:text="+"
+        android:textSize="30dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/round_button"
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,16 +79,26 @@
             android:layout_height="wrap_content"
             android:onClick="internet1"
             android:text="Search Online"
-            android:textSize="15dp" />
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_g_button"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id='@+id/find_db_button'
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search Database"
-            android:textSize="15dp" />
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_g_button"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
-
 </LinearLayout>
-</ScrollView>

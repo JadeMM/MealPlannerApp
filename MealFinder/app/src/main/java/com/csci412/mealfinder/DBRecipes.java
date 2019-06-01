@@ -38,22 +38,22 @@ public class DBRecipes extends AppCompatActivity {
         ArrayList array_list;
 
         if(fifth.length() > 0) {
-            search.setText("Searching for recipes with " + first + ", " + second + ", " + third + ", " + fourth + ", and" + fifth);
+            search.setText("Searching for recipes with " + first + ", " + second + ", " + third + ", " + fourth + ", and" + fifth + "...");
             array_list = mydb.getIngredientRecipes(first, second, third, fourth, fifth);
         } else if (fourth.length() > 0) {
-            search.setText("Searching for recipes with " + first + ", " + second + ", " + third + ", and" + fourth);
+            search.setText("Searching for recipes with " + first + ", " + second + ", " + third + ", and" + fourth + "...");
             array_list = mydb.getIngredientRecipes(first, second, third, fourth);
         } else if (third.length() > 0) {
-            search.setText("Searching for recipes with " + first + ", " + second + ", and" + third);
+            search.setText("Searching for recipes with " + first + ", " + second + ", and" + third + "...");
             array_list = mydb.getIngredientRecipes(first, second, third);
         } else if (second.length() > 0) {
-            search.setText("Searching for recipes with " + first + " and " + second);
+            search.setText("Searching for recipes with " + first + " and " + second + "...");
             array_list = mydb.getIngredientRecipes(first, second);
         } else if (first.length() > 0) {
-            search.setText("Searching for recipes with " + first);
+            search.setText("Searching for recipes with " + first + "...");
             array_list = mydb.getIngredientRecipes(first);
         } else {
-            search.setText("Searching for all recipes");
+            search.setText("Searching for all recipes...");
             array_list = mydb.getAllRecipes();
         }
 

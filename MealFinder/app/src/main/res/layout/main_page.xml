@@ -6,37 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:showDividers="middle">
-
-
-    <TextView
-        android:id='@+id/hello_user'
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome User!"
-        android:textSize="30sp"/>
+    android:showDividers="middle"
+    android:background="@color/lightYellow">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="20dp"
         android:gravity="center">
 
         <Button
             android:id='@+id/find_button'
+            android:background="@drawable/rounded_g_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find recipe by ingredients"/>
+            android:text="Search by Ingredients"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:layout_marginRight="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
 
         <Button
             android:id='@+id/add_button'
+            android:background="@drawable/rounded_g_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create new recipe"/>
+            android:text="Create New Recipe"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent"
+        android:padding="20dp"></ListView>
 </LinearLayout>
