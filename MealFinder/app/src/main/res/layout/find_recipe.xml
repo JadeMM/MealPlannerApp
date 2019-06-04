@@ -77,7 +77,6 @@
             android:id='@+id/find_button'
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="internet1"
             android:text="Search Online"
             android:textSize="20dp"
             android:textColor="@color/white"

@@ -165,7 +165,7 @@ public class DisplayCreatedRecipes extends AppCompatActivity {
         switch(item.getItemId()) {
             case R.id.Delete_Contact:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Recipe deleted")
+                builder.setMessage("you want to delete this recipe?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 mydb.deleteRecipe(name);
